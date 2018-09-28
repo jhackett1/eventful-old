@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/styles.chunk.css","sources":["webpack:///./pages/app.sass"],"sourcesContent":["@import url(\"https://fonts.googleapis.com/css?family=Ubuntu:300i,400,700\");\n* {\n  font-family: Ubuntu, sans-serif; }\n"],"mappings":";AACA;AACA;;","sourceRoot":""}
