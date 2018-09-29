@@ -1,9 +1,8 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
+import config from '../config.json'
 
-import './slider.sass'
-
-var settings = {
+const settings = {
     dots: true,
     infinite: false,
     speed: 500,
@@ -11,21 +10,39 @@ var settings = {
     slidesToScroll: 1,
     arrows: false,
     dotsClass: 'slider__dots'
-  };
+};
 
-export default () =>
-    <Slider {...settings}>
-        <div>
-        <p>14-15th April 2019</p>
-        <h1>Utopia</h1>
-        <h2>The fast stream conference</h2>
-        </div>
-        <div>
-            {/* <img src="/static/onboarding1.jpg"/> */}
-            <h3>Explore events and speakers</h3>
-        </div>
-        <div>
-            {/* <img src="/static/onboarding2.jpg"/> */}
-            <h3>And save the ones you’re interested in</h3>
-        </div>
-    </Slider>
+export default ({children}) =>
+    <>
+        <Slider {...settings}>
+            {children}
+        </Slider>
+        <style jsx>{`
+            .slick-slide div{
+                outline: none
+            }
+            .slider__dots{
+                list-style-type: none;
+                padding: 0;
+            }
+            .slider__dots li{
+                display: inline-block;
+                margin-right: 7px
+            }              
+            .slider__dots li button{
+                display: flex;
+                border-radius: 100%;
+                border: 2px solid ${config.colors.red};
+                background: none;
+                height: 20px;
+                width: 20px;
+                font-size: 0;
+                outline: none;
+                transition: 0.1s ease-in
+            }  
+            .slider__dots li.slick-active button{
+                background: ${config.colors.red}
+
+            }             
+        `}</style>
+    </>
