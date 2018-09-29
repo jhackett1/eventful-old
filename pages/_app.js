@@ -1,8 +1,6 @@
 import React from 'react'
 import App, { Container } from 'next/app'
-
 import Navigation from '../components/Navigation'
-
 import './app.sass'
 
 export default class EventfulApp extends App {
@@ -11,7 +9,7 @@ export default class EventfulApp extends App {
 
     return (
       <Container>
-        <Navigation/>
+        {/* <Navigation/> */}
         <Component {...pageProps} />
       </Container>
     )
