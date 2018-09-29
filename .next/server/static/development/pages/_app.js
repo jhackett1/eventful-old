@@ -136,7 +136,13 @@ var _jsxFileName = "/Users/joshua/Desktop/eventful/components/Navigation.js";
       lineNumber: 7
     },
     __self: this
-  }, "All events")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7
+    },
+    __self: this
+  }, "All events"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8
@@ -149,7 +155,13 @@ var _jsxFileName = "/Users/joshua/Desktop/eventful/components/Navigation.js";
       lineNumber: 8
     },
     __self: this
-  }, "Agenda")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: this
+  }, "Agenda"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9
@@ -162,7 +174,13 @@ var _jsxFileName = "/Users/joshua/Desktop/eventful/components/Navigation.js";
       lineNumber: 9
     },
     __self: this
-  }, "Info")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: this
+  }, "Info"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10
@@ -175,7 +193,13 @@ var _jsxFileName = "/Users/joshua/Desktop/eventful/components/Navigation.js";
       lineNumber: 10
     },
     __self: this
-  }, "Speakers"))));
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10
+    },
+    __self: this
+  }, "Speakers")))));
 });
 
 /***/ }),

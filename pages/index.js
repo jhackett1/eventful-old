@@ -1,7 +1,8 @@
 import react from 'react'
+import Button from '../components/Button'
 
 export default () => (
     <>
-        <h1>Test</h1>
+        <h1>Index</h1>        
     </>
 )

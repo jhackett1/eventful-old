@@ -4,10 +4,10 @@ import Link from 'next/link'
 export default () => (
     <nav>
         <ul>
-            <li><Link href="/events">All events</Link></li>
-            <li><Link href="/agenda">Agenda</Link></li>
-            <li><Link href="/info">Info</Link></li>
-            <li><Link href="/speakers">Speakers</Link></li>
+            <li><Link href="/events"><a>All events</a></Link></li>
+            <li><Link href="/agenda"><a>Agenda</a></Link></li>
+            <li><Link href="/info"><a>Info</a></Link></li>
+            <li><Link href="/speakers"><a>Speakers</a></Link></li>
         </ul>
     </nav>
 )
