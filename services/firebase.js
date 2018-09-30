@@ -1,10 +1,8 @@
 import firebase from 'firebase'
 import config from '../config.json'
 
-const fbConfig = config.firebase
+if (!firebase.apps.length) {
+    firebase.initializeApp(config.firebase)
+}
 
-firebase.initializeApp(fbConfig)
-
-export const provider = new firebase.auth.GoogleAuthProvider();
-export const auth = firebase.auth();
 export default firebase

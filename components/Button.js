@@ -6,11 +6,12 @@ export default ({
     href, 
     label, 
     solid, 
-    small
+    small,
+    onClick
 })=>
     <>
-        <Link href={href}>
-            <a className="button">{label}</a>
+        <Link href={href} >
+            <a className="button" onClick={onClick}>{label}</a>
         </Link>
         <style jsx>{`
             .button {

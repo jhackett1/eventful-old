@@ -19,7 +19,7 @@
         "authDomain": "fs-conf.firebaseapp.com",
         "databaseURL": "https://fs-conf.firebaseio.com",
         "projectId": "fs-conf",
-        "storageBucke"t: "fs-conf.appspot.com",
+        "storageBucket": "fs-conf.appspot.com",
         "messagingSenderId": "351148961412"
     }
 }
