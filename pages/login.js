@@ -3,29 +3,41 @@ import Layout from '../components/Layout'
 import Slider from '../components/Slider'
 import Button from '../components/Button'
 import Help from '../components/Help'
-import firebase from '../services/firebase'
+import firebase, {provider, auth} from '../services/firebase'
 import config from '../config.json'
-
-var provider = new firebase.auth.GoogleAuthProvider()
 
 export default class login extends react.Component{
 
+    constructor(){
+        super()
+        this.state = {
+            user: auth().currentUser
+        }
+    }
+
+
     login(){
-        firebase.auth().signInWithRedirect(provider)
+        auth().signInWithRedirect(provider)
     }
 
     componentDidMount(){
-        firebase.auth().getRedirectResult()
+        auth().getRedirectResult()
             .then(result => {
                 console.log(result)
             }).catch(error => {
                 console.log(error)
             })
+
+        auth().onAuthStateChanged((user) => {
+            this.setState({user: user})
+        });
+
     }
 
     render(){
         return(
             <Layout>
+                {(this.state.user)? "You are logged in": "You aren't logged in"}
                 <Slider>
                     <div className="welcome">
                         <p>14-15th April 2019</p>

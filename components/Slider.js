@@ -1,6 +1,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"
 import config from '../config.json'
+import {Fragment} from 'react'
 
 const settings = {
     dots: true,
@@ -13,11 +14,11 @@ const settings = {
 };
 
 export default ({children}) =>
-    <>
+    <Fragment>
         <Slider {...settings}>
             {children}
         </Slider>
-        <style jsx>{`
+        <style>{`
             .slick-slide div{
                 outline: none;
                 height: calc(100vh - 175px);
@@ -60,4 +61,4 @@ export default ({children}) =>
                 opacity: 1 !important;
             }    
         `}</style>
-    </>
+    </Fragment>

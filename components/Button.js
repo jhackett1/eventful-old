@@ -1,6 +1,7 @@
 import react from 'react'
 import Link from 'next/link'
 import config from '../config.json'
+import {Fragment} from 'react'
 
 export default ({
     href, 
@@ -9,10 +10,14 @@ export default ({
     small,
     onClick
 })=>
-    <>
-        <Link href={href} >
+    <Fragment>
+        {(href)?
+            <Link href={href} >
+                <a className="button" onClick={onClick}>{label}</a>
+            </Link>
+        :
             <a className="button" onClick={onClick}>{label}</a>
-        </Link>
+        }
         <style jsx>{`
             .button {
                 display: inline-block;
@@ -34,4 +39,4 @@ export default ({
                 text-decoration: none;
             }
         `}</style>
-    </>
+    </Fragment>
