@@ -13,5 +13,13 @@
         "grey4": "#efefef",
         "grey5": "#f7f7f7",
         "red": "#F1173A"
+    },
+    "firebase": {
+        "apiKey": "AIzaSyAdlDkT7ah0Zf2viTmVGJCCH7N-6Q_OEeg",
+        "authDomain": "fs-conf.firebaseapp.com",
+        "databaseURL": "https://fs-conf.firebaseio.com",
+        "projectId": "fs-conf",
+        "storageBucke"t: "fs-conf.appspot.com",
+        "messagingSenderId": "351148961412"
     }
 }

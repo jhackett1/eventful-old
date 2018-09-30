@@ -19,11 +19,20 @@ export default ({children}) =>
         </Slider>
         <style jsx>{`
             .slick-slide div{
-                outline: none
+                outline: none;
+                height: calc(100vh - 175px);
+                display: flex !important;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: space-between;
+            }
+            .slick-slide:first-of-type div{
+                justify-content: center;
             }
             .slider__dots{
                 list-style-type: none;
                 padding: 0;
+                margin: 20px
             }
             .slider__dots li{
                 display: inline-block;
@@ -42,7 +51,13 @@ export default ({children}) =>
             }  
             .slider__dots li.slick-active button{
                 background: ${config.colors.red}
-
-            }             
+            }       
+            .slick-slide img{
+                opacity: 0;
+                transition: 0.5s ease-in;
+            }  
+            .slick-active img{
+                opacity: 1 !important;
+            }    
         `}</style>
     </>

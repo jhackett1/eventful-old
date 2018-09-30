@@ -1,8 +1,12 @@
 import react from 'react'
 import config from '../config.json'
+import Head from 'next/head'
 
 export default ({children})=>
-    <main className="standard-layout">
+    <main className="layout">
+        <Head>
+          <meta name="viewport" content="width=device-width"/>
+        </Head>
         {children}
         <style jsx>{`
             @import url('https://fonts.googleapis.com/css?family=Ubuntu:300i,400,700');
