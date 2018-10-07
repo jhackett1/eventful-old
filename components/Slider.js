@@ -59,6 +59,15 @@ export default ({children}) =>
             }  
             .slick-active img{
                 opacity: 1 !important;
-            }    
+            }   
+            .slick-slide h1{
+                opacity: 0;
+                transform: translateY(10px);
+                transition: 0.5s ease-in;
+            } 
+            .slick-active h1{
+                opacity: 1 !important;
+                transform: translateY(0px);
+            }
         `}</style>
     </Fragment>

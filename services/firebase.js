@@ -6,6 +6,15 @@ if (!firebase.apps.length) {
     firebase.initializeApp(config.firebase)
 }
 
+const authProvider = new firebase.auth.GoogleAuthProvider()
+
+// Limit to G Suite accounts as specified in config
+if(config.hostedDomain){
+    authProvider.setCustomParameters({
+        hd: config.hostedDomain
+    })
+}
+
 export default firebase
-export const provider = new firebase.auth.GoogleAuthProvider()
+export const provider = authProvider
 export const auth = firebase.auth
