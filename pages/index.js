@@ -1,7 +1,7 @@
 import react from 'react'
 import Layout from '../components/Layout'
 
-export default class extends react.Component{
+class IndexPage extends react.Component{
     render(){
         return(
             <Layout>
@@ -10,3 +10,5 @@ export default class extends react.Component{
         )
     }
 }
+
+export default IndexPage

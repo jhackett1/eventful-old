@@ -1,6 +1,5 @@
 import react from 'react'
 import Router from 'next/router'
-import Layout from '../components/Layout'
 import Loader from '../components/Loader'
 import Slider from '../components/Slider'
 import Button from '../components/Button'
@@ -74,7 +73,7 @@ export default class Login extends react.Component{
                 // If the user has just logged in or already was, then hide the spinner and send them home
                 if(result.user || auth().currentUser){
                     Router.push('/')
-                    
+                    // this.setState({loading: false})
                 } else {
                     this.setState({loading: false})
                 }
@@ -83,11 +82,10 @@ export default class Login extends react.Component{
 
     render(){
         return(
-            <Layout>
+            <>
                 {(this.state.loading)? 
                     <>
                         <Loader/>
-                        {/* <LoggingInMessage>Logging in...</LoggingInMessage> */}
                     </>
                  : 
                     <>
@@ -116,7 +114,7 @@ export default class Login extends react.Component{
                         </LoginContainer>
                     </>
                  }
-            </Layout>
+            </>
         )
     }
 }

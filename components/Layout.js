@@ -1,20 +1,33 @@
 import react from 'react'
-import Router from 'next/router'
-import config from '../config.json'
-import Head from 'next/head'
 import { auth } from '../services/firebase'
-
+import Header from './Header'
 
 export default class extends react.Component{
     constructor(props){
         super(props)
+        this.state = {
+            user: null
+        }
+    }
+
+    componentDidMount(){
+        auth().onAuthStateChanged((user)=>{
+            if(user){
+                this.setState({
+                    user: user
+                })
+            } else {
+                this.setState({
+                    user: null
+                })
+            }
+        })
     }
 
     render(){
         return(
-            <main className="layout">
-                <p onClick={()=>{auth().signOut().then(()=>console.log("Signed out: ", auth().currentUser))}}>Sign out</p>
-                <p onClick={()=>{console.log("User: ", auth().currentUser)}}>Log current user</p>
+            <main>
+                <Header user={this.state.user}/>
                 {this.props.children}
             </main>
         )
