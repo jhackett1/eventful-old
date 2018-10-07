@@ -45,7 +45,7 @@ export default ({children}) =>
                 height: 25px;
                 width: 25px;
                 font-size: 0;
-                outline: none;
+                // outline: none;
                 transition: 0.1s ease-in
             }  
             .slider__dots li.slick-active button{

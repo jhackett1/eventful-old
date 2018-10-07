@@ -16,7 +16,9 @@ export default class MyDocument extends Document {
         <Head>
           <link href="https://fonts.googleapis.com/css?family=Ubuntu:300i,400,700" rel="stylesheet"></link>
           <meta name="viewport" content="width=device-width"/>
-
+          <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon"></link>
+          <link rel="icon" href="/static/favicon.ico" type="image/x-icon"></link>
+          <title>Eventful</title>
           <style>{`
             *{
                 font-family: Ubuntu, sans-serif;
@@ -29,9 +31,7 @@ export default class MyDocument extends Document {
                 color: ${config.colors.grey1}
             }
           `}</style>
-
           {this.props.styleTags}
-
         </Head>
         <body className="custom_class">
           <Main />

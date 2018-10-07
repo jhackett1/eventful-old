@@ -1,5 +1,6 @@
 import react from 'react'
 import Router from 'next/router'
+import Head from 'next/head'
 import Loader from '../components/Loader'
 import Slider from '../components/Slider'
 import Button from '../components/Button'
@@ -92,6 +93,9 @@ export default class Login extends react.Component{
         } else {
             return(
                 <>
+                    <Head>
+                        <title>Log in · Eventful</title>
+                    </Head>
                     <Slider>
                         <section>
                             <P>14-15th April 2019</P>
