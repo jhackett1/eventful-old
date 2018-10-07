@@ -4,9 +4,9 @@ import Loader from '../components/Loader'
 import Slider from '../components/Slider'
 import Button from '../components/Button'
 import Help from '../components/Help'
-import firebase, {provider, auth} from '../services/firebase'
+import {provider, auth} from '../services/firebase'
 import config from '../config.json'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 const H1 = styled.h1`
     font-weight: 700;
@@ -34,10 +34,16 @@ const P = styled.p`
     margin: 0px 0px 0px 20px;
 `
 
+const ImgHolder = styled.div`
+    flex: 1
+`
+
 const Img = styled.img`
+    height: auto;
+    max-height: 100%;
+    width: auto;
     max-width: 100%;
-    max-height: 500px;
-    align-self: flex-end;
+    float: right;
     filter: grayscale(1);
     clip-path: circle(49.6% at 70% 39%);
 `
@@ -58,63 +64,62 @@ export default class Login extends react.Component{
         this.state = {
             loading: true
         }
-        this.login = this.login.bind(this)
-    }
-
-    // Trigger login redirect
-    login(){
-        auth().signInWithRedirect(provider)
     }
 
     componentDidMount(){
-        // Handle redirect result
-        auth().getRedirectResult()
-            .then((result)=>{
-                // If the user has just logged in or already was, then hide the spinner and send them home
-                if(result.user || auth().currentUser){
-                    Router.push('/')
-                    // this.setState({loading: false})
-                } else {
-                    this.setState({loading: false})
-                }
-            })
+        auth().onAuthStateChanged((result)=>{
+            if(result || auth().currentUser){
+                Router.push('/')
+            } else {
+                this.setState({
+                    loading: false
+                })
+            }
+        })
+    }
+
+    login(){
+        // Start login redirect
+        auth().signInWithRedirect(provider)
     }
 
     render(){
-        return(
-            <>
-                {(this.state.loading)? 
-                    <>
-                        <Loader/>
-                    </>
-                 : 
-                    <>
-                        <Slider>
-                            <div>
-                                <P>14-15th April 2019</P>
-                                <H1>{config.eventTitle}</H1>
-                                <H2>{config.eventStrapline}</H2>
-                            </div>
-                            <div>
+        if(this.state.loading){
+            return(
+                <Loader/>
+            )
+        } else {
+            return(
+                <>
+                    <Slider>
+                        <section>
+                            <P>14-15th April 2019</P>
+                            <H1>{config.eventTitle}</H1>
+                            <H2>{config.eventStrapline}</H2>
+                        </section>
+                        <section>
+                            <ImgHolder>
                                 <Img src="/static/onboarding1.jpg"/>
-                                <H3>{config.onboarding[0]}</H3>
-                            </div>
-                            <div>
+                            </ImgHolder>
+                            <H3>{config.onboarding[0]}</H3>
+                        </section>
+                        <section>
+                            <ImgHolder>
                                 <Img src="/static/onboarding2.jpg"/>
-                                <H3>{config.onboarding[1]}</H3>
-                            </div>
-                        </Slider>
-                        <LoginContainer>
-                            <Button
-                                onClick={this.login}
-                                label="Log in with Google →"
-                                solid
-                                />  
-                            <Help/>  
-                        </LoginContainer>
-                    </>
-                 }
-            </>
-        )
+                            </ImgHolder>
+                            <H3>{config.onboarding[1]}</H3>
+                        </section>
+                    </Slider>
+                    <LoginContainer>
+                        <Button
+                            onClick={this.login}
+                            label="Log in with Google →"
+                            solid
+                            />  
+                        <Help/>  
+                    </LoginContainer>
+                </>
+            )
+        }
     }
 }

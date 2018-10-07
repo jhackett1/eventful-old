@@ -19,15 +19,13 @@ export default ({children}) =>
             {children}
         </Slider>
         <style>{`
-            .slick-slide div{
+            .slick-slide section{
                 outline: none;
                 height: calc(100vh - 175px);
                 display: flex !important;
                 flex-direction: column;
-                align-items: flex-start;
-                justify-content: space-between;
             }
-            .slick-slide:first-of-type div{
+            .slick-slide:first-of-type section{
                 justify-content: center;
             }
             .slider__dots{
@@ -37,15 +35,15 @@ export default ({children}) =>
             }
             .slider__dots li{
                 display: inline-block;
-                margin-right: 7px
+                margin-right: 9px
             }              
             .slider__dots li button{
                 display: flex;
                 border-radius: 100%;
-                border: 2px solid ${config.colors.red};
+                border: 3px solid ${config.colors.red};
                 background: none;
-                height: 20px;
-                width: 20px;
+                height: 25px;
+                width: 25px;
                 font-size: 0;
                 outline: none;
                 transition: 0.1s ease-in
@@ -60,14 +58,5 @@ export default ({children}) =>
             .slick-active img{
                 opacity: 1 !important;
             }   
-            .slick-slide h1{
-                opacity: 0;
-                transform: translateY(10px);
-                transition: 0.5s ease-in;
-            } 
-            .slick-active h1{
-                opacity: 1 !important;
-                transform: translateY(0px);
-            }
         `}</style>
     </Fragment>

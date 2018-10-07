@@ -3,5 +3,5 @@ import ProtectedLayout from '../components/ProtectedLayout'
 
 export default () =>
     <ProtectedLayout>
-        <h1>Events</h1>
+        <h1>Speakers</h1>
     </ProtectedLayout>
