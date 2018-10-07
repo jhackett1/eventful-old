@@ -8,31 +8,42 @@ const loading = keyframes`
 
 const bounce = keyframes`
     0%, 100% {transform: scale(0.0);}
-    50% {transform: scale(1.0);}
+    33.3% {transform: scale(1.0);}
 `
 
 const Loader = styled.div`
     animation: ${loading} 2s linear infinite;
     position: relative;
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     margin: 100px auto;
+    // border: 1px solid green
 `
 
 const Bubble = styled.div`
     position: absolute;
     top: 0;
+    left: 15px;
     width: 25px;
     height: 25px;
     border-radius: 100%;
     background-color: ${config.colors.red};
-    animation: ${bounce} 2s ease-in-out infinite;
+    animation: ${bounce} 4.5s ease-in-out infinite;
 `
 
 const Bubble2 = styled(Bubble)`
     top: auto;
     bottom: 0;
-    animation-delay: -1s;
+    left: 0px;
+    animation-delay: -1.5s;
+`
+
+const Bubble3 = styled(Bubble)`
+    top: auto;
+    bottom: 0;
+    right: 0px;
+    left: auto;
+    animation-delay: -3s;
 `
 
 export default ()=>
@@ -40,5 +51,6 @@ export default ()=>
         <Loader>
             <Bubble/>
             <Bubble2/>
+            <Bubble3/>
         </Loader>
     </Fragment>

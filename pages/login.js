@@ -35,7 +35,8 @@ const P = styled.p`
 `
 
 const ImgHolder = styled.div`
-    flex: 1
+    flex: 1;
+    height: 0px;
 `
 
 const Img = styled.img`
@@ -99,13 +100,13 @@ export default class Login extends react.Component{
                         </section>
                         <section>
                             <ImgHolder>
-                                <Img src="/static/onboarding1.jpg"/>
+                                <Img src="/static/onboarding1-small.jpg"/>
                             </ImgHolder>
                             <H3>{config.onboarding[0]}</H3>
                         </section>
                         <section>
                             <ImgHolder>
-                                <Img src="/static/onboarding2.jpg"/>
+                                <Img src="/static/onboarding2-small.jpg"/>
                             </ImgHolder>
                             <H3>{config.onboarding[1]}</H3>
                         </section>

@@ -4,6 +4,7 @@ import Router from 'next/router'
 import Link from 'next/link'
 import Header from './Header'
 import styled from 'styled-components'
+import Login from '../pages/login'
 
 const Main = styled.main`
     padding: 15px;
@@ -16,12 +17,11 @@ export default class extends react.Component{
 
     componentDidMount(){
         // Send all unauthenticated users right back to the login screen
-
-            if(!auth().currentUser){
+        auth().onAuthStateChanged((user)=>{
+            if(!user){
                 Router.push("/login")
             }
-
-
+        })
     }
 
     logout(){
@@ -34,18 +34,17 @@ export default class extends react.Component{
                 <Main>
                     <button onClick={this.logout}>Log out</button>
                     <ul>
-                        <li><Link href="/">All events</Link></li>
-                        <li><Link href="/agenda">Agenda</Link></li>   
-                        <li><Link href="/info">Info</Link></li>
-                        <li><Link href="/speakers">Speakers</Link></li>                     
+                        <li><Link href="/"><a>All events</a></Link></li>
+                        <li><Link href="/agenda"><a>Agenda</a></Link></li>   
+                        <li><Link href="/info"><a>Info</a></Link></li>
+                        <li><Link href="/speakers"><a>Speakers</a></Link></li>                     
                     </ul>
                     {this.props.children}
                     <p>You should only see this when logged in.</p>
                 </Main>
             )
         } else {
-            
-            return <p>No access</p>
+            return <Login/>
         }
     }
 }
